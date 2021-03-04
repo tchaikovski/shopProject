@@ -1,6 +1,8 @@
 from django.db import models
-from django.db import models
 from shop.models import Product
+from decimal import Decimal
+from django.core.validators import MaxValueValidator, MinValueValidator
+from coupons.models import Coupon
 
 
 class Order(models.Model):
@@ -22,7 +24,11 @@ class Order(models.Model):
         return 'Order {}'.format(self.id)
 
     def get_total_cost(self):
-        return sum(item.get_cost() for item in self.items.all())
+        total_cost = sum(item.get_cost() for item in self.items.all())
+        return total_cost - total_cost * (self.discount / Decimal('100'))
+
+    coupon = models.ForeignKey(Coupon, related_name='orders', null=True, blank=True, on_delete=models.SET_NULL)
+    discount = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
 
 class OrderItem(models.Model):
