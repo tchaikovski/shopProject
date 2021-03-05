@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'coupons.apps.CouponsConfig',
     'rosetta',
     'parler',
+    'localflavor',
 ]
 
 MIDDLEWARE = [
@@ -97,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-en'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -119,15 +120,15 @@ LOCALE_PATHS = (
 
 CART_SESSION_ID = 'cart'
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-# os.path.join(BASE_DIR, 'static/')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # django-parler
 PARLER_LANGUAGES = {
@@ -140,3 +141,7 @@ PARLER_LANGUAGES = {
         'hide_untranslated': False,
     }
 }
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
