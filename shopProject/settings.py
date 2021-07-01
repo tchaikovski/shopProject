@@ -14,7 +14,7 @@ SECRET_KEY = 'zo+xde69ewzwfvp1^1or97j*o+vm4@asa(oz^eqsfo1&_(bf@z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -29,9 +29,9 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'coupons.apps.CouponsConfig',
-    'rosetta',
-    'parler',
-    'localflavor',
+    # 'rosetta',
+    # 'parler',
+    # 'localflavor',
 ]
 
 MIDDLEWARE = [
@@ -102,7 +102,7 @@ LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_L10N = True
 

@@ -9,7 +9,6 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('shop', '0002_auto_20210301_1414'),
     ]
 
     operations = [
