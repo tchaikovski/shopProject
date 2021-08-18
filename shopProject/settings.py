@@ -14,7 +14,7 @@ SECRET_KEY = 'zo+xde69ewzwfvp1^1or97j*o+vm4@asa(oz^eqsfo1&_(bf@z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -29,9 +29,9 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'coupons.apps.CouponsConfig',
-    # 'rosetta',
-    # 'parler',
-    # 'localflavor',
+    'rosetta',
+    'parler',
+    'localflavor',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +70,18 @@ WSGI_APPLICATION = 'shopProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'shop',
+#         'USER': 'postgres',
+#         'PASSWORD': '0000',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -102,7 +114,7 @@ LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = False
+USE_I18N = True
 
 USE_L10N = True
 

@@ -14,6 +14,7 @@ click-repl==0.1.6
 cssselect2==0.4.1
 defusedxml==0.6.0
 Django==3.1.7
+psycopg2-binary==2.8.6
 django-parler==2.2
 django-rosetta==0.9.5
 html5lib==1.1
